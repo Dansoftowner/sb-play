@@ -1,0 +1,32 @@
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" content="text/html">
+</head>
+
+<body>
+<h1 th:text="${pageTitle}">Home</h1>
+<a href="hello/heading1?text=HEADING 1">Go to somewhere else</a>
+<div>
+    <img th:src="@{images/sb.png}" src="../static/images/sb.png">
+</div>
+
+<article th:each="story: ${stories}">
+    <header>
+        <h1 th:text="${story.title}">Ez itt a cím</h1>
+        <p th:text="${story.date}">Posted on Sept 23, 2014 at 10:00 PM</p>
+    </header>
+
+    <section th:text="${story.content}">
+        Ez a cucc
+    </section>
+
+    <footer>
+        <address>
+            Beküldte: <span th:text="${story.author}">Ez a köcsög</span>
+        </address>
+    </footer>
+</article>
+
+</body>
+</html>
